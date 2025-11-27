@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char str[1000];
+    int freq[26] = {0};  // Frequency array for lowercase letters
+    int i = 0;
+    char ch;
+
+    // Input string
+    fgets(str, sizeof(str), stdin);
+
+    // Find first repeating lowercase character
+    while (str[i] != '\0' && str[i] != '\n') {
+        ch = str[i];
+        if (ch >= 'a' && ch <= 'z') {
+            freq[ch - 'a']++;
+            if (freq[ch - 'a'] == 2) {
